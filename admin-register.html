@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .signup-card h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .signup-card input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 1rem;
+      font-size: 1rem;
+    }
+
+    .signup-card button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #1e3c72;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .signup-card button:hover {
+      background-color: #162f5c;
+    }
+
+    .signup-card .link {
+      margin-top: 1rem;
+      display: block;
+      color: #1e3c72;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .signup-card .link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-card">
+    <h2>Admin Signup</h2>
+    <form action="/admin-register" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+      <button type="submit">Sign Up</button>
+      <a class="link" href="admin-login.html">Already have an account? Login</a>
+    </form>
+  </div>
+</body>
+</html>

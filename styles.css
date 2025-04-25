@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #007bff;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Header Section */
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header .logo {
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header .tagline {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Login Section */
+.login-section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-section p {
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.login-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.login-card {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-card h3 {
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.student-btn {
+    background-color: #007bff;
+}
+
+.instructor-btn {
+    background-color: #6f42c1;
+}
+
+.admin-btn {
+    background-color: #dc3545;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Exam Schedule Section */
+.exam-schedule {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.exam-schedule table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.exam-schedule th, .exam-schedule td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.exam-schedule th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Announcements Section */
+.announcements {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.announcements li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* System Status Section */
+.status-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.status-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+/* Footer Section */
+.footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Theory Question</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4c00ff;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      resize: none;
+    }
+
+    .add-btn {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background: #4c00ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background: #3a00cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Theory Question</h1>
+    <div class="form-group">
+      <label for="question">Question</label>
+      <textarea id="question" rows="4" placeholder="Enter the question"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="word-limit">Word Limit (Optional)</label>
+      <input type="number" id="word-limit" placeholder="Enter word limit" />
+    </div>
+    <div class="form-group">
+      <label for="marks">Marks</label>
+      <input type="number" id="marks" placeholder="Enter marks for this question" />
+    </div>
+    <button class="add-btn">Add Question</button>
+  </div>
+</body>
+</html>

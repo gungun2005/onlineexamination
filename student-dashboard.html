@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background: #333;
+      color: #fff;
+    }
+
+    .dashboard-container {
+      background-color: white;
+      padding: 30px;
+      max-width: 1200px;
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .dashboard-container {
+      background-color: #444;
+      color: #fff;
+    }
+
+    h1 {
+      color: #4c00ff;
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    body.dark-mode h1 {
+      color: #a29bfe;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .section h2 {
+      color: #fff;
+    }
+
+    .status-box {
+      background-color: #f0f2ff;
+      padding: 20px;
+      border-radius: 24px;
+      margin-top: 10px;
+    }
+
+    body.dark-mode .status-box {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .status-box p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    body.dark-mode .status-box p {
+      color: #ddd;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 16px;
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .card {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .card h3 {
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    body.dark-mode .card p {
+      color: #ddd;
+    }
+
+    .calendar {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .calendar .date {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .calendar .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .calendar .day {
+      padding: 10px;
+      background: #f0f2ff;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .calendar .day:hover {
+      background: #4c00ff;
+      color: white;
+    }
+
+    body.dark-mode .calendar .day {
+      background: #555;
+      color: #fff;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    body.dark-mode .footer {
+      color: #ddd;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #4c00ff;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .theme-toggle {
+      color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()">☀️</button>
+  <div class="dashboard-container">
+    <!-- Profile Section -->
+    <h1>Welcome back!</h1>
+
+    <!-- Upcoming Exams Section -->
+    <div class="section">
+      <h2>Upcoming Exams</h2>
+      <div class="status-box" id="upcoming-exams">
+        <p>No upcoming exams assigned yet.</p>
+      </div>
+    </div>
+
+    <!-- Classmates Online/Offline Section -->
+    <div class="section">
+      <h2>Classmates Status</h2>
+      <div class="status-box" id="classmates-status">
+        <p>No classmates are currently online or offline.</p>
+      </div>
+    </div>
+
+    <!-- Subjects Section -->
+    <div class="section">
+      <h2>Subjects</h2>
+      <div class="status-box" id="subjects">
+        <p>No subjects assigned yet.</p>
+      </div>
+    </div>
+
+    <!-- Teachers Section -->
+    <div class="section">
+      <h2>Teachers</h2>
+      <div class="status-box" id="teachers">
+        <p>No teachers assigned yet.</p>
+      </div>
+    </div>
+
+    <!-- Departments Section -->
+    <div class="section">
+      <h2>Departments</h2>
+      <div class="status-box" id="departments">
+        <p>No departments assigned yet.</p>
+      </div>
+    </div>
+
+    <!-- Calendar Section -->
+    <div class="section calendar">
+      <h2>Exam Calendar</h2>
+      <div class="date">April 2025</div>
+      <div class="days">
+        <div class="day">1</div>
+        <div class="day">2</div>
+        <div class="day">3</div>
+        <div class="day">4</div>
+        <div class="day">5</div>
+        <div class="day">6</div>
+        <div class="day">7</div>
+        <!-- Add more days as needed -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      © 2025 Online Exam Portal
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    function toggleTheme() {
+      const body = document.body;
+      const themeToggle = document.getElementById("theme-toggle");
+
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "🌙";
+      } else {
+        themeToggle.textContent = "☀️";
+      }
+    }
+
+    // Example dynamic data
+    const studentData = {
+      upcomingExams: [],
+      classmates: { online: 0, offline: 0 },
+      subjects: [],
+      teachers: [],
+      departments: []
+    };
+
+    // Populate upcoming exams
+    const upcomingExamsDiv = document.getElementById("upcoming-exams");
+    if (studentData.upcomingExams.length > 0) {
+      upcomingExamsDiv.innerHTML = `<h3>Upcoming Exams</h3>`;
+      studentData.upcomingExams.forEach(exam => {
+        upcomingExamsDiv.innerHTML += `<p>${exam.subject}: ${exam.date}</p>`;
+      });
+    }
+
+    // Populate classmates status
+    const classmatesStatusDiv = document.getElementById("classmates-status");
+    classmatesStatusDiv.innerHTML = `
+      <p>Online: ${studentData.classmates.online}</p>
+      <p>Offline: ${studentData.classmates.offline}</p>
+    `;
+
+    // Populate subjects
+    const subjectsDiv = document.getElementById("subjects");
+    if (studentData.subjects.length > 0) {
+      subjectsDiv.innerHTML = `<h3>Subjects</h3>`;
+      studentData.subjects.forEach(subject => {
+        subjectsDiv.innerHTML += `<p>${subject}</p>`;
+      });
+    }
+
+    // Populate teachers
+    const teachersDiv = document.getElementById("teachers");
+    if (studentData.teachers.length > 0) {
+      teachersDiv.innerHTML = `<h3>Teachers</h3>`;
+      studentData.teachers.forEach(teacher => {
+        teachersDiv.innerHTML += `<p>${teacher}</p>`;
+      });
+    }
+
+    // Populate departments
+    const departmentsDiv = document.getElementById("departments");
+    if (studentData.departments.length > 0) {
+      departmentsDiv.innerHTML = `<h3>Departments</h3>`;
+      studentData.departments.forEach(department => {
+        departmentsDiv.innerHTML += `<p>${department}</p>`;
+      });
+    }
+  </script>
+</body>
+</html>
